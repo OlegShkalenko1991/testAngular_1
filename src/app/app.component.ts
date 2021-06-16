@@ -7,21 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  public arrButtonsState:boolean[][] =
-  [
-    [true, true, true, true],
-    [true, true, true, true],
-    [true, true, true, true],
-    [true, true, true, true]
-  ];
+  public arrButtonsState: boolean[][] =
+    [
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true],
+      [true, true, true, true]
+    ];
 
-  public arrButtonsColor:string[] = ['red','orange', 'yellow', 'green'];
+  public arrButtonsColor: string[] = ['red', 'orange', 'yellow', 'green'];
 
-  toggleHandler(x:number, y:number) {
-    this.arrButtonsState[x][y]= !this.arrButtonsState[x][y];
+  toggleHandler(x: number, y: number) {
+    this.arrButtonsState[x][y] = !this.arrButtonsState[x][y];
   }
 
-  setColor(row:number){
+  getColor(row: number) {
     return this.arrButtonsColor[row];
   }
 }

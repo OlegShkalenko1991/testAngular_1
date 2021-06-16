@@ -1,12 +1,14 @@
-<div *ngFor="let buttonStateX of arrButtonsState; index as x">
+<div class="root-popit">
+  <div *ngFor="let buttonStateX of arrButtonsState; index as x">
 
-<button
-  class="button5"
-  [ngClass]="arrButtonsState[x][y] ? setColor(x) : 'button5' "
-  *ngFor="let buttonSateY of arrButtonsState; index as y"
-  (click)="toggleHandler(x, y)"
-  >
-push
-</button>
+    <button
+      class='root-popit__button'
+      [ngClass]="arrButtonsState[x][y] ? ('root-popit__button_background_' + getColor(x)) : 'root-popit__button'"
+      *ngFor="let buttonSateY of arrButtonsState; index as y"
+      (click)="toggleHandler(x, y)">
+      push
+    </button>
+
+  </div>
 
 </div>
