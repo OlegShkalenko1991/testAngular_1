@@ -13,8 +13,8 @@ export class Answer {
 
   public constructor(
     private _textAnswer: string,
-    private _isSelected: boolean,
-    private _isValid: boolean
+    private _isValid: boolean,
+    private _isSelected: boolean
   ) {
 
   }
