@@ -1,1 +1,4 @@
-<p>question works!</p>
+<p>{{dataQuestion.textQuestion}}</p>
+<ims-answer
+  *ngFor="let answer of dataQuestion.answers"
+  [dataAnswer]="answer"></ims-answer>

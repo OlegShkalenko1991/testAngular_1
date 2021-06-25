@@ -1,14 +1,1 @@
-<div class="root-popit">
-  <div *ngFor="let buttonStateX of arrButtonsState; index as x">
-
-    <button
-      class='root-popit__button'
-      [ngClass]="arrButtonsState[x][y] ? ('root-popit__button_background_' + getColor(x)) : 'root-popit__button_pushed'"
-      *ngFor="let buttonSateY of arrButtonsState; index as y"
-      (click)="toggleHandler(x, y)">
-      PUSH
-    </button>
-
-  </div>
-
-</div>
+<ims-game></ims-game>
