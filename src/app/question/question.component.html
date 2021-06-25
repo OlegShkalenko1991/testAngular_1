@@ -1,4 +1,5 @@
 <p>{{dataQuestion.textQuestion}}</p>
 <ims-answer
   *ngFor="let answer of dataQuestion.answers"
-  [dataAnswer]="answer"></ims-answer>
+  [dataAnswer]="answer"
+  (clickEmitter)="clickHandler($event)"></ims-answer>

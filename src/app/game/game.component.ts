@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Answer } from '../models/answer';
 
 @Component({
   selector: 'ims-game',
@@ -10,6 +11,10 @@ export class GameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public clickHandler(answer: Answer): void{
+
   }
 
 }
