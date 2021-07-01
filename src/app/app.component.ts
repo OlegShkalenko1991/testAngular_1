@@ -28,22 +28,22 @@ export class AppComponent {
         new Answer("4", false, false),
       ]),
       new Question("Q2", [
-        new Answer("11", false, false),
+        new Answer("11", true, false),
         new Answer("22", false, false),
         new Answer("33", false, false),
         new Answer("44", false, false),
       ]),
-      new Question("", [
-        new Answer("", false, false),
-        new Answer("", false, false),
-        new Answer("", false, false),
-        new Answer("", false, false),
-      ]),
       new Question("Q3", [
-        new Answer("111", false, false),
+        new Answer("111", true, false),
         new Answer("222", false, false),
         new Answer("333", false, false),
         new Answer("444", false, false),
+      ]),
+      new Question("Q4", [
+        new Answer("1111", true, false),
+        new Answer("2222", false, false),
+        new Answer("3333", false, false),
+        new Answer("4444", false, false),
       ])
     ]
   }

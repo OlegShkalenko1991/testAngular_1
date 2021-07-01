@@ -41,7 +41,7 @@ export class GameComponent implements OnInit {
   }
 
   private checkAnswer(): boolean {
-    this._game.question[0].answers.forEach(answer => {
+    this._game.currentQuestion.answers.forEach(answer => {
       if (answer.isSelected) {
         if (answer.isValid) {
           this._game.score++;
@@ -57,8 +57,12 @@ export class GameComponent implements OnInit {
   }
 
   public getNextQuestion(): void {
-    this._currentQuestionIndex++;
-    this._game.currentQuestion = this._game.question[this._currentQuestionIndex];
+    try {
+      this._currentQuestionIndex++;
+      this._game.currentQuestion = this._game.question[this._currentQuestionIndex];
+    }
+    catch (error) {
+      console.error('Index out of range');
+    }
   }
-
 }
