@@ -22,7 +22,7 @@ export class AnswerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public clickHandler(): void{
+  public clickAnswerHandler(): void{
     this.clickEmitter.emit(this.dataAnswer);
   }
 

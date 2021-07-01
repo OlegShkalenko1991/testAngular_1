@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Answer } from '../models/answer';
 import { Question } from '../models/question';
 
 @Component({
@@ -11,9 +12,19 @@ export class QuestionComponent implements OnInit {
   @Input()
   public dataQuestion!: Question;
 
-  constructor() { }
+  @Output()
+  public clickEmitter: EventEmitter<number>;
+
+  constructor() {
+    this.clickEmitter = new EventEmitter();
+  }
 
   ngOnInit(): void {
   }
 
+  public clickAnswerHandler(answer: Answer): void {
+    if (!answer.isSelected) {
+      answer.isSelected = true;
+    }
+  }
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Answer } from '../models/answer';
+import { Component, Input, OnInit } from '@angular/core';
+import { Game } from '../models/game';
+import { Question } from '../models/question';
 
 @Component({
   selector: 'ims-game',
@@ -8,13 +9,56 @@ import { Answer } from '../models/answer';
 })
 export class GameComponent implements OnInit {
 
+  @Input()
+  public gameData!: Array<Question>;
+
+  private _game!: Game;
+  public get game(): Game {
+    return this._game;
+  }
+
+  private _currentQuestionIndex!: number
+
   constructor() { }
 
   ngOnInit(): void {
+    this._game = new Game(this.gameData)
+    this.startGame();
   }
 
-  public clickHandler(answer: Answer): void{
+  public clickNextQuestionHandler(): void {
+    this.checkAnswer();
+  }
 
+  private startGame(): void {
+    this._game.score = 0;
+    this._currentQuestionIndex = 0;
+    this._game.currentQuestion = this._game.question[this._currentQuestionIndex];
+  }
+
+  private endGame(): void {
+
+  }
+
+  private checkAnswer(): boolean {
+    this._game.question[0].answers.forEach(answer => {
+      if (answer.isSelected) {
+        if (answer.isValid) {
+          this._game.score++;
+          this.getNextQuestion();
+        }
+        else {
+          this.endGame();
+        }
+      }
+    });
+
+    return true;
+  }
+
+  public getNextQuestion(): void {
+    this._currentQuestionIndex++;
+    this._game.currentQuestion = this._game.question[this._currentQuestionIndex];
   }
 
 }

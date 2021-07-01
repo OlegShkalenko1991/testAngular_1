@@ -1,6 +1,7 @@
 import { Answer } from "./answer";
 
 export class Question {
+
   public get answers(): Answer[] {
     return this._answers;
   }
@@ -11,7 +12,8 @@ export class Question {
 
   public constructor(
     private _textQuestion: string,
-    private _answers: Answer[]
+    private _answers: Answer[],
+
   ) {
 
   }

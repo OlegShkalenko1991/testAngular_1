@@ -1,4 +1,7 @@
 export class Answer {
+  public set isSelected(value: boolean) {
+    this._isSelected = value;
+  }
   public get isSelected(): boolean {
     return this._isSelected;
   }

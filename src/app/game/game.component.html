@@ -1,2 +1,4 @@
 <header>Кто хочет стать миллионером?</header>
-<ims-question></ims-question>
+<ims-question [dataQuestion]="game.currentQuestion"></ims-question>
+<button (click)="clickNextQuestionHandler()">Next question</button>
+<p>{{game.score}}</p>
