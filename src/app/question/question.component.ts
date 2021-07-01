@@ -23,8 +23,15 @@ export class QuestionComponent implements OnInit {
   }
 
   public clickAnswerHandler(answer: Answer): void {
-    if (!answer.isSelected) {
-      answer.isSelected = true;
-    }
+
+    this.clearSelectionAnswer();
+    answer.isSelected = true;
+
+  }
+
+  private clearSelectionAnswer(): void {
+    this.dataQuestion.answers.forEach(answer => {
+      answer.isSelected = false;
+    })
   }
 }
