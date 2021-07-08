@@ -1,24 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GameComponent } from './game/game.component';
-import { QuestionComponent } from './question/question.component';
-import { AnswerComponent } from './answer/answer.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
+import { FilmsComponent } from './features/films/films.component';
+import { FilmComponent } from './features/film/film.component';
+import { HttpClientModule } from '@angular/common/http'
+
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    GameComponent,
-    QuestionComponent,
-    AnswerComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

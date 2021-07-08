@@ -1,0 +1,5 @@
+<h1>Films</h1>
+
+<div *ngFor="let film of films$ | async">
+  <a [routerLink]="getLink(film)">{{film.titel}}</a>
+</div>
